@@ -8,14 +8,14 @@ DEBUG = True
 TEMPLATES[0]['OPTIONS']['debug'] = True
 
 ADMINS = (
-    ('Your name', 'your_email@example.com'),
+    ('LukeH', 'luke.houlihan@gmail.com'),
 )
 MANAGERS = ADMINS
 
 
 DATABASES = {{
     'default': {{
-        'ENGINE': 'django.db.backends.{dbengine}',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': {dbname},
         'USER': '{dbuser}',
         'PASSWORD': '{dbpassword}',
@@ -53,7 +53,7 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Sender address used for sent emails
-WGER_SETTINGS['EMAIL_FROM'] = 'wger Workout Manager <wger@example.com>'
+WGER_SETTINGS['EMAIL_FROM'] = 'Fitfilment <admin@Fitfilment.com>'
 
 # Your twitter handle, if you have one for this instance.
 #WGER_SETTINGS['TWITTER'] = ''
