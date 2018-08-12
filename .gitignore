@@ -21,6 +21,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+venv*/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -46,7 +47,7 @@ coverage.xml
 
 # Django stuff:
 *.log
-settings*.py
+/wger/settings.py
 *.sqlite
 /CACHE
 
@@ -59,6 +60,6 @@ target/
 # IDE
 .idea/
 
-# External Libraries 
+# External Libraries
 wger/core/static/bower_components
 node_modules
