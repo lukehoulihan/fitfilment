@@ -42,6 +42,10 @@ urlpatterns = [
         TemplateView.as_view(template_name="license.html"),
         name='license'),
 
+    url(r'^trainers$',
+        TemplateView.as_view(template_name="trainers.html"),
+        name='trainers'),
+
     url(r'^code$',
         RedirectView.as_view(permanent=True, url='https://github.com/lukehoulihan/wger'),
         name='code'),

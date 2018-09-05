@@ -1,8 +1,8 @@
 {% load staticfiles %}
 {
-    "name": "wger Workout Manager",
+    "name": "FitFilment Workout Manager",
     "version": "{{version}}",
-    "description": "wger Workout Manager is a free, open source application that manages your exercises, workouts and nutrition.",
+    "description": "FitFilment is an application that manages your exercises, workouts and nutrition.",
     "launch_path": "/dashboard",
     "icons": {
         "16": "{% static 'images/logos/logo-marketplace-16.png' %}",
@@ -13,10 +13,6 @@
         "64": "{% static 'images/logos/logo-marketplace-64.png' %}",
         "128": "{% static 'images/logos/logo-marketplace-128.png' %}",
         "256": "{% static 'images/logos/logo-marketplace-256.png' %}"
-    },
-    "developer": {
-        "name": "Roland Geider",
-        "url": "https://github.com/wger-project/wger"
     },
     "default_locale": "en",
     "locales": {

@@ -209,6 +209,9 @@ function wgerInitTinymce() {
   // http://www.tinymce.com/wiki.php/Configuration:menu
   if (typeof tinyMCE !== 'undefined') {
     tinyMCE.init({
+      setup: function(editor) {
+        editor.getElement().removeAttribute('required');
+      },
       // General options
       mode: 'textareas',
       theme: 'modern',
@@ -248,7 +251,7 @@ function modalDialogFormEdit() {
       'width="48" ' +
       'height="48"> ' +
       '</div>');
-    $('#ajax-info-title').html('Processing'); // TODO: translate this
+    $('#ajax-info-title').html('Loading'); // TODO: translate this
 
     // OK, we did the POST, what do we do with the result?
     $.ajax({

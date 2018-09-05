@@ -59,6 +59,7 @@ target/
 
 # IDE
 .idea/
+.DS_Store
 
 # External Libraries
 wger/core/static/bower_components

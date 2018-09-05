@@ -1,0 +1,205 @@
+{% extends "base_features.html" %}
+{% load i18n staticfiles wger_extras %}
+
+{#           #}
+{# Opengraph #}
+{#           #}
+{% block opengraph %}
+    {{ block.super }}
+    <meta property="og:title" content="{% trans 'Features' %} - FitFilment">
+
+    {% with username=owner_user.username %}
+        <meta property="og:description" content="{% blocktrans %}FitFilment is an application to manage your fitness fulfillment, by planning, tracking, and executing workout and fitness plans.  Customize your personal workout down to the rep, to reach your fitness goals. {% endblocktrans %}">
+    {% endwith %}
+{% endblock %}
+
+
+{#         #}
+{# Content #}
+{#         #}
+{% block content %}
+    <header>
+        <div class="container">
+            <div class="intro-text">
+        				<h2 class="word word--crossword">
+        					<span class="word__main" data-column="1" data-row="4">FitFilment</span>
+        					<span class="word__cross" data-column="1" data-row="4">Fit</span>
+        					<span class="word__cross" data-column="2" data-row="2"></span>
+        					<span class="word__cross" data-column="3" data-row="4">Track</span>
+        					<span class="word__cross" data-column="4" data-row="3"></span>
+        					<span class="word__cross" data-column="5" data-row="3">Lift</span>
+                  <span class="word__cross" data-column="6" data-row="4">Log</span>
+                  <span class="word__cross" data-column="7" data-row="3"></span>
+                  <span class="word__cross" data-column="8" data-row="2">Execute</span>
+                  <span class="word__cross" data-column="9" data-row="1">Plan</span>
+                  <span class="word__cross" data-column="10" data-row="2">Fitness</span>
+
+        				</h2>
+                <h3>Plan, Track, and Execute your personal fitness goals</h3>
+                {% if allow_guest_users and not user.is_authenticated %}
+                    <!-- <a href="{% url 'core:user:demo-entries' %}" class="page-scroll btn btn-xl" rel="nofollow" style="margin-top: 1em;">
+                        {% trans "Try it now" %}
+                    </a> -->
+                {% endif %}
+
+                {% if not user.is_authenticated or user.userprofile.is_temporary %}
+                    {% if allow_registration %}
+                        <a href="{% url 'core:user:registration' %}" class="page-scroll btn btn-xl" style="margin-top: 1em;">
+                            {% trans "Start Now FREE" %}
+                        </a>
+                    {% endif %}
+
+                    <a href="{% url 'core:user:login' %}" class="page-scroll btn btn-xl" style="margin-top: 1em;">
+                        {% trans "Login" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{% trans "Benefits to finding FitFilment" %}</h2>
+                    <h3 class="section-subheading text-muted">
+                        {% blocktrans trimmed %}
+                            FitFilment is the one stop shop for everything that makes your workout better.
+                            This all in one app gives you the power to exceed your fitness goals by forming
+                            a custom or pre-built plan, executing on the plan, and tracking the results.
+                        {% endblocktrans %}
+                    </h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+        					<div class="service">
+        						<div class="icon-holder">
+        							<img src="{% static 'images/icons/workouts.png' %}" alt="Workouts" class="icon">
+        						</div>
+        						<h4 class="heading">{% trans "Workouts" %}</h4>
+        						<p class="description">
+                      {% blocktrans trimmed %}
+                          Create and manage flexible workout routines for any goals you
+                          have. Select exactly which exercises you want to do and how many repetitions,
+                          time or distance you want to do them. You can also select from pre-made workouts
+                          or even mix and match.
+                      {% endblocktrans %}
+                    </p>
+        					</div>
+        				</div>
+                <div class="col-md-4">
+        					<div class="service">
+        						<div class="icon-holder">
+        							<img src="{% static 'images/icons/diet.png' %}" alt="Nutrition" class="icon">
+        						</div>
+        						<h4 class="heading">{% trans "Nutrition" %}</h4>
+        						<p class="description">
+                      {% blocktrans trimmed %}
+                          Create your personal diet plan by creating as many meals with as many
+                          different ingredients as you need. The application will calculate the
+                          nutritional values (total calories, protein, carbohydrates, and so on)
+                          for the whole plan as well as the indivual meals.
+                      {% endblocktrans %}
+                    </p>
+        					</div>
+        				</div>
+                <div class="col-md-4">
+        					<div class="service">
+        						<div class="icon-holder">
+        							<img src="{% static 'images/icons/check-list.png' %}" alt="Track list" class="icon">
+        						</div>
+        						<h4 class="heading">{% trans "Track" %}</h4>
+        						<p class="description">
+                      {% blocktrans trimmed %}
+                          Enter the weights and repetitions you did for each exercise to generate
+                          diagrams that let you see at a glance how well you are doing. The raw
+                          numbers are of course still accessible. You can also enter notes and a general impression for each workout (great, neutral, etc.)
+                      {% endblocktrans %}
+                    </p>
+        					</div>
+        				</div>
+            </div>
+            {% if not user.is_authenticated or user.userprofile.is_temporary %}
+            {% if allow_registration %}
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="{% url 'core:user:registration' %}" class="page-scroll btn btn-xl" style="margin-top: 1em;">
+                        {% trans "Get Started" %}
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            {% endif %}
+        </div>
+    </section>
+
+    <section id="features" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{% trans "Our Software" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "What can great fitness management software do for you? Among other things..." %}</h3>
+                </div>
+            </div>
+            <div class="col-md-6 featureSoftware">
+              <img src="{% static 'images/icons/scale.png' %}" alt="Weight Tracking">
+              <div class="featuresDescription">
+                <h5>{% trans "Track Weight" %}</h5>
+                <p>
+                  {% blocktrans trimmed %}
+                      Keep track of your progress with the body weight chart. This makes
+                      it easy to see if you are reaching your goals or need to adjust
+                      something.
+                  {% endblocktrans %}
+                </p>
+                <!-- <a href="/applicant-tracking/" aria-label="Click to learn more about Weight Tracking">Learn more</a> -->
+              </div>
+            </div>
+            <div class="col-md-6 featureSoftware">
+              <img src="{% static 'images/icons/event.png' %}" alt="Workout Calendar">
+              <div class="featuresDescription">
+                <h5>{% trans "Workout Calendar" %}</h5>
+                <p>
+                  {% blocktrans trimmed %}
+                    Get an overview of how and when you trained as well as how you
+                    personally felt you performed. Access all your individual diary
+                    entries with one click.
+                  {% endblocktrans %}
+                </p>
+                <!-- <a href="/applicant-tracking/" aria-label="Click to learn more about Weight Tracking">Learn more</a> -->
+              </div>
+            </div>
+            <div class="col-md-6 featureSoftware">
+              <img src="{% static 'images/icons/weightlifting.png' %}" alt="Huge exercise list">
+              <div class="featuresDescription">
+                <h5>{% trans "Huge Exercise List" %}</h5>
+                <p>
+                  {% blocktrans trimmed %}
+                    The exercise database contains more than hundred exercises from
+                    which you can choose when creating a workout. You can view them by
+                    category and equipment used or muscles trained.
+                  {% endblocktrans %}
+                </p>
+                <!-- <a href="/applicant-tracking/" aria-label="Click to learn more about Weight Tracking">Learn more</a> -->
+              </div>
+            </div>
+            <div class="col-md-6 featureSoftware">
+              <img src="{% static 'images/icons/coach.png' %}" alt="Trainer Led Features">
+              <div class="featuresDescription">
+                <h5>{% trans "Trainer Led Features" %}</h5>
+                <p>
+                  {% blocktrans trimmed %}
+                    If your personal trainer uses FitFilment they are able to see and tweak
+                    your workouts or nutrition plan for optimal progress.
+                  {% endblocktrans %}
+                </p>
+                <!-- <a href="/applicant-tracking/" aria-label="Click to learn more about Weight Tracking">Learn more</a> -->
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+{% endblock %}
