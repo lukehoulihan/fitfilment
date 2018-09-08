@@ -7,6 +7,10 @@ pipeline {
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         echo 'Building...'
         sh 'su wger'
+        sh 'source /home/wger/venv/bin/activate'
+        sh 'rm -r src'
+        echo 'y'
+        echo 'y'
         sh 'git clone https://github.com/lukehoulihan/fitfilment.git /home/wger/src'
         sh 'cd /home/wger/src'
         sh 'pip install -r requirements.txt'

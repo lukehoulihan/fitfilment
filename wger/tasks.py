@@ -156,16 +156,16 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
         allowed_hosts = '*'
         nocaptcha = True
     elif environment == 'dev':
-        media_folder_path = 'home/wger/media'
-        static_folder_path = 'home/wger/static'
+        media_folder_path = "'home/wger/media'"
+        static_folder_path = "'home/wger/static'"
         debug = True
-        allowed_hosts = ['dev.fitfilment.com']
+        allowed_hosts = "'dev.fitfilment.com'"
         nocaptcha = True
     elif environment == 'prod':
-        media_folder_path = 'home/wger/media'
-        static_folder_path = 'home/wger/static'
+        media_folder_path = "'home/wger/media'"
+        static_folder_path = "'home/wger/static'"
         debug = False
-        allowed_hosts = ['.fitfilment.com']
+        allowed_hosts = "'.fitfilment.com'"
         nocaptcha = False
 
     # Use localhost with default django port if no URL given
