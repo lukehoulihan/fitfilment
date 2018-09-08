@@ -29,8 +29,8 @@ SECRET_KEY = '{default_key}'
 
 # Your reCaptcha keys
 RECAPTCHA_PUBLIC_KEY = '6Lf6OW8UAAAAAElurnBHXD_gSd_kiHCtFYDt_nVq'
-RECAPTCHA_PRIVATE_KEY = {recaptcha_private_key}
-NOCAPTCHA = {nocaptcha}
+RECAPTCHA_PRIVATE_KEY = '{recaptcha_private_key}'
+NOCAPTCHA = '{nocaptcha}''
 
 # The site's URL (e.g. http://www.my-local-gym.com or http://localhost:8000)
 # This is needed for uploaded files and images (exercise images, etc.) to be
@@ -39,10 +39,10 @@ SITE_URL = '{siteurl}'
 
 # Path to uploaded files
 # Absolute filesystem path to the directory that will hold user-uploaded files.
-MEDIA_ROOT = {media_folder_path}
+MEDIA_ROOT = '{media_folder_path}'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = {static_folder_path}
+STATIC_ROOT = '{static_folder_path}'
 
 # Allow all hosts to access the application. Change if used in production.
 ALLOWED_HOSTS = '{allowed_hosts}'

@@ -135,7 +135,7 @@ def bootstrap(context,
             'key-length': 'Lenght of the generated secret key. Default: 50'})
 def create_settings(context, settings_path=None, database_path=None, url=None,
                     database_type='sqlite3', database_pass='', key_length=50,
-                    environment='local', recaptcha_private_key="''"):
+                    environment='local', recaptcha_private_key=''):
     '''
     Creates a local settings file
     '''
@@ -151,21 +151,21 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
 
     if environment == 'local':
         media_folder_path = repr(get_user_data_path('wger', 'media'))
-        static_folder_path = "''"
+        static_folder_path = ''
         debug = True
         allowed_hosts = '*'
         nocaptcha = True
     elif environment == 'dev':
-        media_folder_path = "'home/wger/media'"
-        static_folder_path = "'home/wger/static'"
+        media_folder_path = 'home/wger/media'
+        static_folder_path = 'home/wger/static'
         debug = True
-        allowed_hosts = "'dev.fitfilment.com'"
+        allowed_hosts = 'dev.fitfilment.com'
         nocaptcha = True
     elif environment == 'prod':
-        media_folder_path = "'home/wger/media'"
-        static_folder_path = "'home/wger/static'"
+        media_folder_path = 'home/wger/media'
+        static_folder_path = 'home/wger/static'
         debug = False
-        allowed_hosts = "'.fitfilment.com'"
+        allowed_hosts = '.fitfilment.com'
         nocaptcha = False
 
     # Use localhost with default django port if no URL given
