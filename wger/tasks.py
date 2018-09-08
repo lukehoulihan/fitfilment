@@ -134,7 +134,8 @@ def bootstrap(context,
                              'sqlite3',
             'key-length': 'Lenght of the generated secret key. Default: 50'})
 def create_settings(context, settings_path=None, database_path=None, url=None,
-                    database_type='sqlite3', key_length=50):
+                    database_type='sqlite3', database_pass='', key_length=50,
+                    environment='local', recaptcha_private_key="''"):
     '''
     Creates a local settings file
     '''
@@ -148,7 +149,24 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
         database_path = get_user_data_path('wger', 'database.sqlite')
     dbpath_value = repr(database_path)
 
-    media_folder_path = repr(get_user_data_path('wger', 'media'))
+    if environment == 'local':
+        media_folder_path = repr(get_user_data_path('wger', 'media'))
+        static_folder_path = "''"
+        debug = True
+        allowed_hosts = '*'
+        nocaptcha = True
+    elif environment == 'dev':
+        media_folder_path = 'home/wger/media'
+        static_folder_path = 'home/wger/static'
+        debug = True
+        allowed_hosts = ['dev.fitfilment.com']
+        nocaptcha = True
+    elif environment == 'prod':
+        media_folder_path = 'home/wger/media'
+        static_folder_path = 'home/wger/static'
+        debug = False
+        allowed_hosts = ['.fitfilment.com']
+        nocaptcha = False
 
     # Use localhost with default django port if no URL given
     if url is None:
@@ -162,9 +180,9 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
     # The environment variable is set by travis during testing
     if database_type == 'postgresql':
         dbengine = 'postgresql_psycopg2'
-        dbname = "'test_wger'"
-        dbuser = 'postgres'
-        dbpassword = ''
+        dbname = "'wger'"
+        dbuser = 'wger'
+        dbpassword = database_pass
         dbhost = '127.0.0.1'
         dbport = ''
     elif database_type == 'sqlite3':
@@ -188,7 +206,12 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
                                                dbport=dbport,
                                                default_key=secret_key,
                                                siteurl=url,
-                                               media_folder_path=media_folder_path)
+                                               media_folder_path=media_folder_path,
+                                               debug=debug,
+                                               allowed_hosts=allowed_hosts,
+                                               static_folder_path=static_folder_path,
+                                               recaptcha_private_key=recaptcha_private_key,
+                                               nocaptcha=nocaptcha)
 
     if not os.path.exists(settings_module):
         os.makedirs(settings_module)

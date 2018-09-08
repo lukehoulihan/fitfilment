@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+  environment {
+
+  }
+  stages {
+    stage('Build'){
+      steps {
+        echo 'Building...'
+        sh 'ls -la'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+        sh 'ls'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying...'
+        sh 'ls'
+      }
+    }
+  }
+}

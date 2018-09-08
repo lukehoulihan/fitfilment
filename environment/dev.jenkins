@@ -1,0 +1,34 @@
+pipeline {
+  agent any
+  environment {}
+  stages {
+    stage('Build'){
+      steps {
+        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+        echo 'Building...'
+        sh 'su wger'
+        sh 'git clone https://github.com/lukehoulihan/fitfilment.git /home/wger/src'
+        sh 'cd /home/wger/src'
+        sh 'pip install -r requirements.txt'
+        sh 'python setup.py develop'
+        sh 'wger create_settings --settings-path /home/wger/src/settings.py \
+            --database-type postgresql --environment dev --database-pass Lh142139@'
+
+        sh 'wger bootstrap --settings-path /home/wger/src/settings.py \
+            --address http://dev.fitfilment.com --port 80 --no-start-server'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+        sh 'ls'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying...'
+        sh 'python manage.py collectstatic'
+      }
+    }
+  }
+}

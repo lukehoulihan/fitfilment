@@ -4,7 +4,7 @@
 from wger.settings_global import *
 
 # Use 'DEBUG = True' to get more details for server errors
-DEBUG = True
+DEBUG = {debug}
 TEMPLATES[0]['OPTIONS']['debug'] = True
 
 ADMINS = (
@@ -28,9 +28,9 @@ DATABASES = {{
 SECRET_KEY = '{default_key}'
 
 # Your reCaptcha keys
-RECAPTCHA_PUBLIC_KEY = ''
-RECAPTCHA_PRIVATE_KEY = ''
-NOCAPTCHA = True
+RECAPTCHA_PUBLIC_KEY = '6Lf6OW8UAAAAAElurnBHXD_gSd_kiHCtFYDt_nVq'
+RECAPTCHA_PRIVATE_KEY = {recaptcha_private_key}
+NOCAPTCHA = {nocaptcha}
 
 # The site's URL (e.g. http://www.my-local-gym.com or http://localhost:8000)
 # This is needed for uploaded files and images (exercise images, etc.) to be
@@ -42,8 +42,10 @@ SITE_URL = '{siteurl}'
 MEDIA_ROOT = {media_folder_path}
 MEDIA_URL = '/media/'
 
+STATIC_ROOT = {static_folder_path}
+
 # Allow all hosts to access the application. Change if used in production.
-ALLOWED_HOSTS = '*'
+ALLOWED_HOSTS = '{allowed_hosts}'
 
 # This might be a good idea if you setup memcached
 #SESSION_ENGINE = "django.contrib.sessions.backends.cache"
@@ -51,6 +53,8 @@ ALLOWED_HOSTS = '*'
 # Configure a real backend in production
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Sender address used for sent emails
 WGER_SETTINGS['EMAIL_FROM'] = 'Fitfilment <admin@Fitfilment.com>'

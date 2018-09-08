@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    Setup script for wger Workout manager
+    Setup script for Workout manager
 
     :copyright: 2011, 2012 by OpenSlides team, see AUTHORS.
     :license: GNU GPL, see LICENSE for more details.
@@ -24,13 +24,11 @@ with open('requirements.txt') as requirements_production:
     install_requires = requirements_production.readlines()
 
 setup(
-    name='wger',
+    name='FitFilment',
     description='FLOSS workout, fitness and weight manager/tracker written with Django',
     long_description=long_description,
     version=get_version(),
-    url='https://github.com/wger-project',
-    author='Roland Geider',
-    author_email='roland@geider.net',
+    url='https://github.com/lukehoulihan/fitfilment.git',
     license='AGPL3+',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,

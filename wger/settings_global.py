@@ -192,7 +192,7 @@ STATICFILES_FINDERS = (
 #
 # Email
 #
-EMAIL_SUBJECT_PREFIX = '[wger] '
+EMAIL_SUBJECT_PREFIX = '[FitFilment] '
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
@@ -318,7 +318,7 @@ THUMBNAIL_ALIASES = {
 #
 # Django compressor
 #
-STATIC_ROOT = ''
+STATIC_ROOT = '/static'
 STATIC_URL = '/static/'
 
 # The default is not DEBUG, override if needed
