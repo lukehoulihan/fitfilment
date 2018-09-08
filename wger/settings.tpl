@@ -45,7 +45,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = '{static_folder_path}'
 
 # Allow all hosts to access the application. Change if used in production.
-ALLOWED_HOSTS = '{allowed_hosts}'
+ALLOWED_HOSTS = {allowed_hosts}
 
 # This might be a good idea if you setup memcached
 #SESSION_ENGINE = "django.contrib.sessions.backends.cache"
