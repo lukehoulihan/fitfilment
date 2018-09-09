@@ -5,7 +5,6 @@ pipeline {
       steps {
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         echo 'Building...'
-        sh '. /home/wger/venv/bin/activate'
         sh 'cd /home/wger/'
         sh 'rm -r -f /home/wger/src/'
         sh 'ls -l'
@@ -29,7 +28,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying...'
-        sh 'python manage.py collectstatic'
+        sh '. /home/wger/venv/bin/activate python manage.py collectstatic'
         echo 'yes'
       }
     }
