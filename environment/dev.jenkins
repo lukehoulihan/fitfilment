@@ -28,8 +28,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying...'
-        sh '. /home/wger/venv/bin/activate python manage.py collectstatic'
-        echo 'yes'
+        sh '. /home/wger/venv/bin/activate python manage.py collectstatic -f'
       }
     }
   }
