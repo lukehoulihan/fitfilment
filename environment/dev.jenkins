@@ -13,7 +13,7 @@ pipeline {
         sh 'cd /home/wger/src/'
         sh '/home/wger/venv/bin/pip install -r requirements.txt'
         sh '/home/wger/venv/bin/python3.5 setup.py develop'
-        sh '/home/wger/venv/bin/python3.5 wger create_settings --settings-path /home/wger/src/settings.py \
+        sh '/home/wger/venv/bin/python3.5 manage.py create_settings --settings-path /home/wger/src/settings.py \
             --database-type postgresql --environment dev --database-pass wger'
 
         sh 'wger bootstrap --settings-path /home/wger/src/settings.py \
