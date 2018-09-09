@@ -6,7 +6,7 @@ pipeline {
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         echo 'Building...'
         sh '. /home/wger/venv/bin/activate'
-        sh 'rm -rf /src/'
+        sh 'rm -r /src/'
         sh 'mkdir src'
         sh 'cd src'
         sh 'git clone https://github.com/lukehoulihan/fitfilment.git ./'
