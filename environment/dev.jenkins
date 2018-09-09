@@ -9,7 +9,7 @@ pipeline {
         sh 'cd /home/wger/'
         sh 'rm -r -f /home/wger/src/'
         sh 'ls -l'
-        sh 'mkdir src'
+        sh 'mkdir /home/wger/src/'
         sh 'cd src'
         sh 'git clone https://github.com/lukehoulihan/fitfilment.git ./'
         sh 'pip install -r requirements.txt'
