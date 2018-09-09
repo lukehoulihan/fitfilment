@@ -14,10 +14,10 @@ pipeline {
         sh '/home/wger/venv/bin/pip install -r requirements.txt'
         sh '/home/wger/venv/bin/python3.5 setup.py develop'
         sh '. /home/wger/venv/bin/activate wger create_settings --settings-path /home/wger/src/settings.py \
-            --database-type postgresql --environment dev --database-pass wger'
+            --database-type postgresql --environment dev --database-pass wger \
+            wger bootstrap --settings-path /home/wger/src/settings.py \
+                --address http://dev.fitfilment.com --port 80 --no-start-server'
 
-        sh 'wger bootstrap --settings-path /home/wger/src/settings.py \
-            --address http://dev.fitfilment.com --port 80 --no-start-server'
       }
     }
     stage('Test') {
