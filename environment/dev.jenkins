@@ -16,7 +16,8 @@ pipeline {
                 --database-type postgresql --environment dev --database-pass wger && \
             wger bootstrap --settings-path /home/wger/src/settings.py \
                 --address http://dev.fitfilment.com --port 80 --no-start-server && \
-            python manage.py collectstatic'
+            python manage.py collectstatic && \
+            echo yes'
       }
     }
     stage('Test') {
