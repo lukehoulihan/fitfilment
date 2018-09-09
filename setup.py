@@ -24,7 +24,7 @@ with open('requirements.txt') as requirements_production:
     install_requires = requirements_production.readlines()
 
 setup(
-    name='FitFilment',
+    name='wger',
     description='FLOSS workout, fitness and weight manager/tracker written with Django',
     long_description=long_description,
     version=get_version(),
