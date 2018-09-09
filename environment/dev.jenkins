@@ -6,6 +6,7 @@ pipeline {
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         echo 'Building...'
         sh '. /home/wger/venv/bin/activate'
+        sh 'cd /home/wger/'
         sh 'rm -r -f /home/wger/src/'
         sh 'ls -l'
         sh 'mkdir src'
