@@ -157,7 +157,7 @@ def create_settings(context, settings_path=None, database_path=None, url=None,
         nocaptcha = True
     elif environment == 'dev':
         media_folder_path = 'home/wger/media'
-        static_folder_path = '../static'
+        static_folder_path = 'home/wger/static'
         debug = True
         allowed_hosts = "'dev.fitfilment.com'"
         nocaptcha = True
