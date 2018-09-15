@@ -76,7 +76,7 @@
 					easing: 'easeInOutQuad',
 					rotateY: [0,180],
 					color: [
-						{value: '#8fd694', delay: 150, duration: 1}
+						{value: '#30A271', delay: 150, duration: 1}
 					]
 				});
 			}, 50);

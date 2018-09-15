@@ -13,6 +13,14 @@ header {
   padding-top: 50px;
 }
 
+.btn-default {
+    color: #fff;
+    background-color: #30A271;
+    border-color: #30A271;
+    font-size: 16px;
+    padding: 12px;
+}
+
 .services {
 	margin: 40px 0;
 }
@@ -50,7 +58,7 @@ header {
 }
 
 .service:hover {
-	border-color: #00a8ff;
+	border-color: #30A271;
 }
 
 .service:hover .icon-holder {
