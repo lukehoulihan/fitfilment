@@ -320,7 +320,7 @@ by the US Department of Agriculture. It is extremely complete, with around
     weight_unit = models.CharField(verbose_name=_('Weight unit'),
                                    max_length=2,
                                    choices=UNITS,
-                                   default=UNITS_KG)
+                                   default=UNITS_LB)
     '''Preferred weight unit'''
 
     ro_access = models.BooleanField(verbose_name=_('Allow external access'),
