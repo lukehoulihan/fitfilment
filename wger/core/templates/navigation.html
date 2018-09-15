@@ -127,11 +127,12 @@
                                data-toggle="dropdown">{% trans "About FitFilment" %} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'software:features' %}">{% trans "Features" %}</a></li>
-                                <li><a href="{% url 'software:contribute' %}">{% trans "Contribute" %} </a></li>
                                 <li><a href="{% url 'software:issues' %}">{% trans "Report a bug" %} </a></li>
                                 <li><a href="{% url 'software:tos' %}">{% trans "Terms of service" %} </a></li>
+                                {% if perms.gym.manage_gyms %}
                                 <li class="divider"></li>
                                 <li><a href="{% url 'software:api' %}">{% trans "REST API" %} </a></li>
+                                {% endif %}
                             </ul>
                         </li>
                         {% endif %}
