@@ -21,6 +21,34 @@ header {
     padding: 12px;
 }
 
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: white;
+  background-color: #1f6c4b;
+  border-color: #1f6c4b;
+}
+
+.btn-sm {
+    color: #fff;
+    background-color: #30A271;
+    border-color: #30A271;
+    font-size: 12px;
+    padding: 8px;
+}
+
+.btn-sm:hover,
+.btn-sm:focus,
+.btn-sm:active,
+.btn-sm.active,
+.open .dropdown-toggle.btn-sm {
+  color: white;
+  background-color: #1f6c4b;
+  border-color: #1f6c4b;
+}
+
 .services {
 	margin: 40px 0;
 }
