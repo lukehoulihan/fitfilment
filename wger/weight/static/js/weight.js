@@ -38,8 +38,6 @@ $(document).ready(function () {
   var weightChart;
   weightChart = {};
   chartParams = {
-    title: "Weight History Graph",
-    description: "This graph displays previous weight entries.",
     animate_on_load: true,
     full_width: true,
     top: 10,
