@@ -92,7 +92,10 @@
 {#         #}
 {% block options %}
 {% if is_owner %}
-<div class="btn-group">
+<div>
+    <a href="{% url 'weight:add' %}" class="btn btn-success btn-sm wger-modal-dialog">
+        {% trans "Add Weight Entry" %}
+    </a>
     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="{% fa_class 'cog' %}"></span>
         {% trans "Options" %}
@@ -112,8 +115,6 @@
         </li>
     </ul>
 </div>
-<a href="{% url 'weight:add' %}" class="btn btn-success btn-sm wger-modal-dialog">
-    {% trans "Add" %}
-</a>
+
 {% endif %}
 {% endblock %}
