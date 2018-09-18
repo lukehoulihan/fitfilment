@@ -45,7 +45,7 @@ $(document).ready(function () {
     right: 10,
     show_secondary_x_label: true,
     interpolate: d3.curveLinear,
-    xax_count: 10,
+    xax_count: 4,
     target: '#weight_diagram',
     x_accessor: 'date',
     y_accessor: 'weight',
