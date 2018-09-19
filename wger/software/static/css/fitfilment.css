@@ -49,6 +49,10 @@ header {
   border-color: #1f6c4b;
 }
 
+.btn-xs {
+    padding: 0px;
+}
+
 .services {
 	margin: 40px 0;
 }
