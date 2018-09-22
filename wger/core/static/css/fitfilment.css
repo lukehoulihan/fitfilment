@@ -16,7 +16,6 @@ body {
   background-color: #fff;
 }
 
-
 .text-muted {
   color: #777777;
 }
@@ -262,6 +261,15 @@ header .intro-text .intro-heading {
     border-width: 0px;
     background-color: #ffffff;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #30A271;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #1f6c4b;
+    background-color: #e7e7e7;
 }
 
 section {
