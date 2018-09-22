@@ -169,8 +169,36 @@
                     {#             #}
                     {# Options tab #}
                     {#             #}
+                    <ul class="nav navbar-nav navbar-right">
+                      {#                                         #}
+                      {# Render the links to the other languages #}
+                      {#                                         #}
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <img src="/static/images/icons/flag-{{language.short_name}}.svg"
+                               width="36"
+                               height="22"
+                               alt="{% trans language.full_name %}"
+                               title="{% trans language.full_name %}"
+                               style="border: 1px solid #151515;">
+                            {{language.full_name}}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          {% for language in languages %}
+                          {% language_select language %}
+                          {% endfor %}
+                          <li class="divider"></li>
+                          <li>
+                              <a href="https://www.transifex.com/rge/wger-workout-manager/">
+                                  <span class="{% fa_class 'plus' %}"></span>
+                                  {% trans "Translate" %}
+                              </a>
+                          </li>
+                        </ul>
+                    </li>
                     {% if not user.is_authenticated or user.userprofile.is_temporary %}
-                        <ul class="nav navbar-nav pull-right">
+
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -183,9 +211,9 @@
                                     <li><a href="{% url 'core:user:password_reset' %}">{% trans "Reset password" %}</a></li>
                                 </ul>
                             </li>
-                        </ul>
+
                     {% else %}
-                        <ul class="nav navbar-nav navbar-right">
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     {{user|format_username}}
@@ -237,38 +265,11 @@
                                     {% endif  %}
                                 </ul>
                             </li>
-                        </ul>
 
                     {% endif %}
-                    {#                                         #}
-                    {# Render the links to the other languages #}
-                    {#                                         #}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/static/images/icons/flag-{{language.short_name}}.svg"
-                                 width="36"
-                                 height="22"
-                                 alt="{% trans language.full_name %}"
-                                 title="{% trans language.full_name %}"
-                                 style="border: 1px solid #151515;">
-                              {{language.full_name}}
-                              <span class="caret"></span>
-                          </a>
-                          <ul class="dropdown-menu">
-                            {% for language in languages %}
-                            {% language_select language %}
-                            {% endfor %}
-                            <li class="divider"></li>
-                            <li>
-                                <a href="https://www.transifex.com/rge/wger-workout-manager/">
-                                    <span class="{% fa_class 'plus' %}"></span>
-                                    {% trans "Translate" %}
-                                </a>
-                            </li>
-                          </ul>
-                      </li>
-                  </ul>
+
+                </ul>
+
                 </div><!--/.nav-collapse -->
             </div>
         </div>
