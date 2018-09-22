@@ -72,7 +72,7 @@ h6 {
   background-color: #eeeeff;
 }
 .bg-secondary {
-  background-color: #9fb4c7;
+  background-color: #5c80a0;
 }
 .btn-primary {
   color: white;
@@ -87,16 +87,23 @@ h6 {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.open .dropdown-toggle.btn-primary {
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.open .dropdown-toggle.btn-primary,
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.open .dropdown-toggle.btn-success{
   color: white;
   background-color: #1f6c4b;
   border-color: #1f6c4b;
 }
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-image: none;
-}
+
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -179,6 +186,9 @@ fieldset[disabled] .btn-xl.active {
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
 .open .dropdown-toggle.btn-default {
   color: white;
   background-color: #1f6c4b;
@@ -205,6 +215,12 @@ fieldset[disabled] .btn-xl.active {
 
 .btn-xs {
     padding: 0px;
+}
+
+.open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #fff;
+    background-color: #1f6c4b;
+    border-color: #1f6c4b;
 }
 
 header {
@@ -415,8 +431,8 @@ ul.social-buttons li a {
   transition: all 0.3s;
 }
 ul.social-buttons img {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 ::-moz-selection {

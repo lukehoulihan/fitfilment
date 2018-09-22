@@ -56,59 +56,55 @@
     <div id="current-url" data-current-url="{{request_full_path}}"></div>
     <div id="current-language" data-current-language="{{language.short_name}}"></div>
 
-
-
-<footer class="bg-secondary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="list-inline social-buttons">
-                    <li>
-                        <a href="https://github.com/lukehoulihan/fitfilment" title="Github">
-                            <img src="{% static 'images/icons/github-sign.png' %}" alt="Github" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Twitter">
-                         <img src="{% static 'images/icons/twitter.png' %}" alt="Twitter" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Facebook">
-                         <img src="{% static 'images/icons/facebook.png' %}" alt="Facebook" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Instagram">
-                         <img src="{% static 'images/icons/instagram.png' %}" alt="Intagram" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.transifex.com/rge/wger-workout-manager/" title="{% trans 'Translate' %}">
-                            <img src="{% static 'images/icons/translate.png' %}" alt="Translate" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                      {% if show_shariff %}
-                        {% include 'misc/fragments/shariff_modal.html' %}
-                        <a data-toggle="modal" href="#shariffModal" title="Share">
-                          <img src="{% static 'images/icons/social-normal.png' %}" alt="Share" class="icon">
-                        </a>
-                        <div class="clearfix"></div>
-                      {% endif %}
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-inline quicklinks">
-                    <li><a href="{% url 'core:about' %}">{% trans "About" %}</a></li>
-
-                    <li><a href="{% url 'software:tos' %}">{% trans "Terms of service" %}</a></li>
-                </ul>
+    <footer class="bg-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline social-buttons">
+                      <li>
+                          <a href="#" title="Instagram">
+                           <img src="{% static 'images/icons/instagram.png' %}" alt="Intagram" class="icon">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" title="Facebook">
+                           <img src="{% static 'images/icons/facebook.png' %}" alt="Facebook" class="icon">
+                          </a>
+                      </li>
+                        <li>
+                            <a href="#" title="Twitter">
+                             <img src="{% static 'images/icons/twitter.png' %}" alt="Twitter" class="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/lukehoulihan/fitfilment" title="Github">
+                                <img src="{% static 'images/icons/github-sign.png' %}" alt="Github" class="icon">
+                            </a>
+                        </li>
+                        <li>
+                          {% if show_shariff %}
+                            {% include 'misc/fragments/shariff_modal.html' %}
+                            <a data-toggle="modal" href="#shariffModal" title="Share">
+                              <img src="{% static 'images/icons/social-normal.png' %}" alt="Share" class="icon">
+                            </a>
+                            <div class="clearfix"></div>
+                          {% endif %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="{% url 'core:about' %}">{% trans "About" %}</a></li>
+                        <li><a href="{% url 'software:issues' %}">{% trans "Get in Touch" %}</a></li>
+                        <li><a href="{% url 'software:tos' %}">{% trans "Terms of service" %}</a></li>
+                    </ul>
+                    <div class="navbar-right">
+                        <em class="text-light" style="font-size: 80%;">{{version}}</em>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 <script src="{% static 'bower_components/shariff/build/shariff.min.js' %}"></script>
 <script src="{% static 'js/charming.min.js' %}"></script>
