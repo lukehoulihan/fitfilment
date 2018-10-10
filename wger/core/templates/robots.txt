@@ -1,2 +1,2 @@
-{% for lang in languages %}Sitemap: http://wger.de/{{lang.0}}/sitemap.xml
+{% for lang in languages %}Sitemap: https://fitfilment.com/{{lang.0}}/sitemap.xml
 {% endfor %}
