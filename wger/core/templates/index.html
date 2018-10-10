@@ -39,6 +39,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
 
 <div class="row">
     <div class="col-sm-4">
+      <img src="{% static 'images/icons/gym-equipment-2/svg/033-barbell-2.svg' %}" class="default-icon center" alt="Current workout icon">
         <h4>{% trans "Current Workout"%}</h4>
             {% if current_workout %}
                 <p>
@@ -78,7 +79,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
                     </a>
                 {% endif %}
             {% else %}
-                <a href="{% url 'manager:workout:add' %}" class="btn btn-sm">
+                <a href="{% url 'manager:workout:add' %}" class="btn btn-sm center">
                     {% trans "No workouts found." %} {% trans "Add one now." %}
                 </a>
             {% endif %}
@@ -92,6 +93,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
               or, if you don't have one, simply by date.{% endblocktrans %}</em></p>
     </div>
     <div class="col-sm-4">
+      <img src="{% static 'images/icons/diet.svg' %}" class="default-icon center" alt="Current nutrition plan icon">
         <h4>{% trans "Nutrition plan"%}</h4>
 
         {% if plan %}
@@ -130,7 +132,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
         </table>
         <div id="nutrition_diary_chart"></div>
         {% if not plan %}
-                <a href="{% url 'nutrition:plan:add' %}" class="btn btn-sm  btn-success">
+                <a href="{% url 'nutrition:plan:add' %}" class="btn btn-sm  btn-success center">
                     {% trans "No nutrition plans." %} {% trans "Add one now." %}
                 </a>
         {% endif %}
@@ -144,6 +146,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
 
     </div>
     <div class="col-sm-4">
+      <img src="{% static 'images/icons/gym-equipment-2/svg/007-weight-scale.svg' %}" class="default-icon center" alt="Current workout icon">
         <h4>{% trans "Weight"%}</h4>
         <p>
             <a href="{% url 'weight:overview' user.username %}">{% trans "Overview" %}</a>
@@ -179,7 +182,7 @@ day in your current workout:{% endblocktrans %} <strong>{{current_workout}}</str
         {% endif %}
         <div id="current-username" data-current-username="{{ owner_user.username }}"></div>
         <div id="weight_diagram"></div>
-        <a href="{% url 'weight:add' %}" class="btn btn-success btn-sm wger-modal-dialog">
+        <a href="{% url 'weight:add' %}" class="btn btn-success btn-sm wger-modal-dialog center">
             {% trans "Add weight entry" %}
         </a>
     </div>
