@@ -3,8 +3,18 @@ pipeline {
   stages {
     stage('Build'){
       steps {
+        echo 'Build Step'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Test Step'
+      }
+    }
+    stage('Deploy') {
+      steps {
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-        echo 'Building...'
+        echo 'Deploying...'
         sh '. /home/wger/venv/bin/activate && cd /home/wger/ && \
             rm -r -f /home/wger/src/ && \
             ls -l && \
@@ -18,16 +28,6 @@ pipeline {
                 --address http://dev.fitfilment.com --port 80 --no-start-server && \
             echo "yes" | python manage.py collectstatic && \
             python manage.py clear-cache --clear-all'
-      }
-    }
-    stage('Test') {
-      steps {
-        echo 'Testing...'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
       }
     }
   }
