@@ -201,6 +201,25 @@ fieldset[disabled] .btn-xl.active {
   border-color: #1f6c4b;
 }
 
+.btn-decline{
+  color: white;
+  background-color: #ee3838;
+  border-color: #ee3838;
+}
+
+.btn-decline:hover,
+.btn-decline:focus,
+.btn-decline:active,
+.btn-decline.active,
+.btn-decline:active:focus,
+.btn-decline.active:focus,
+.btn-decline.active:hover,
+.open .dropdown-toggle.btn-decline {
+  color: white;
+  background-color: #c82e2e;
+  border-color: #c82e2e;
+}
+
 .btn-sm {
     color: #fff;
     background-color: #30A271;
