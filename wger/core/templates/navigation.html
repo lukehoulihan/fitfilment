@@ -88,6 +88,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'weight:overview' user.username %}" rel="nofollow">{% trans "Weight overview" %}</a></li>
                                 <li><a href="{% url 'weight:add' %}" rel="nofollow">{% trans "Add weight entry" %}</a></li>
+                                <li><a href="{% url 'nutrition:bmi:view' %}" rel="nofollow">{% trans "BMI calculator" %}</a></li>
                             </ul>
                         </li>
                         {% endif %}
@@ -104,11 +105,11 @@
                                rel="nofollow">{% trans "Nutrition" %} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li><a href="{% url 'nutrition:plan:overview' %}" rel="nofollow">{% trans "Nutrition plans" %}</a></li>
-                            <li><a href="{% url 'nutrition:ingredient:list' %}">{% trans "Ingredient overview" %}</a></li>
-                            <li><a href="{% url 'nutrition:bmi:view' %}" rel="nofollow">{% trans "BMI calculator" %}</a></li>
+                            <li><a href="{% url 'nutrition:ingredient:list' %}">{% trans "Food item overview" %}</a></li>
                             <li><a href="{% url 'nutrition:calories:view' %}" rel="nofollow">{% trans "Daily calories calculator" %}</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'nutrition:ingredient:add' %}" rel="nofollow">{% trans "Add new food item" %}</a></li>
                             {% if perms.nutrition %}
-                                <li class="divider"></li>
                                 <li class="dropdown-header">{% trans "Administration" %}</li>
                                 <li><a href="{% url 'nutrition:weight_unit:list' %}">{% trans "Ingredient weight units" %}</a></li>
                                 <li><a href="{% url 'nutrition:ingredient:pending' %}">{% trans "Ingredients pending review" %}</a></li>
