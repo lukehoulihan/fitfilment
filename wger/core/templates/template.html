@@ -10,6 +10,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="FitFilment is the one stop app for everything
+    that makes your workout better. This all in one app gives you the power to
+    exceed your fitness goals by forming a custom or pre-built plan, executing
+    on the plan, and tracking the results.">
 
     <!-- OpenGraph -->
     {% block opengraph %}
@@ -45,15 +49,15 @@
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
 
     {% compress js %}
-    <script src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
-    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bower_components/Sortable/Sortable.min.js' %}"></script>
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script async src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script async src="{% static 'bower_components/Sortable/Sortable.min.js' %}"></script>
     <script src="{% static 'bower_components/d3/d3.js' %}"></script>
-    <script src="{% static 'bower_components/metrics-graphics/dist/metricsgraphics.min.js' %}"></script>
-    <script src="{% static 'bower_components/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
+    <script async src="{% static 'bower_components/metrics-graphics/dist/metricsgraphics.min.js' %}"></script>
+    <script async src="{% static 'bower_components/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
     <script src="{% static 'js/wger-core.js' %}"></script>
-    <script src="{% static 'js/exercises.js' %}"></script>
-    <script src="{% static 'js/nutrition.js' %}"></script>
+    <script async src="{% static 'js/exercises.js' %}"></script>
+    <script async src="{% static 'js/nutrition.js' %}"></script>
     {% endcompress %}
 
     {% block header %}{% endblock %}

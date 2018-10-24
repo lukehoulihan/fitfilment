@@ -7,7 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="Description" content="FitFilment is the one stop app for everything
+    that makes your workout better. This all in one app gives you the power to
+    exceed your fitness goals by forming a custom or pre-built plan, executing
+    on the plan, and tracking the results.">
 
     <!-- OpenGraph -->
     {% block opengraph %}
@@ -40,8 +43,8 @@
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
 
     {% compress js %}
-    <script src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
-    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script async src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     {% endcompress %}
 
     <title>{% trans "All In One Fitness Planning & Tracking App - Features" %} - FitFilment</title>
@@ -105,11 +108,11 @@
         </div>
     </footer>
 
-<script src="{% static 'bower_components/shariff/build/shariff.min.js' %}"></script>
-<script src="{% static 'js/charming.min.js' %}"></script>
-<script src="{% static 'js/anime.min.js' %}"></script>
-<script src="{% static 'js/crossword.js' %}"></script>
-<script src="{% static 'js/features.js' %}"></script>
+<script async src="{% static 'bower_components/shariff/build/shariff.min.js' %}"></script>
+<script async src="{% static 'js/charming.min.js' %}"></script>
+<script async src="{% static 'js/anime.min.js' %}"></script>
+<script async src="{% static 'js/crossword.js' %}"></script>
+<!-- <script src="{% static 'js/features.js' %}"></script> -->
 </body>
 {% endspaceless_config %}
 </html>
